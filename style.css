@@ -1,0 +1,585 @@
+/* =========================================
+   BASIC SETTINGS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    color: #315a73;
+    background: #f8fcff;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   COLOR VARIABLES
+========================================= */
+
+:root {
+    --dark-blue: #315a73;
+    --blue: #6eb5d6;
+    --pastel-blue: #dff4ff;
+    --very-light-blue: #f3fbff;
+    --soft-text: #6d8998;
+    --white: #ffffff;
+}
+
+
+/* =========================================
+   FLOATING HEARTS & STARS
+========================================= */
+
+.floating span {
+    position: fixed;
+
+    color: #7dbbd7;
+
+    opacity: 0.35;
+
+    font-size: 25px;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    animation: float 6s ease-in-out infinite;
+}
+
+
+/* Position of each decoration */
+
+.floating span:nth-child(1) {
+    top: 12%;
+    left: 8%;
+}
+
+.floating span:nth-child(2) {
+    top: 25%;
+    right: 10%;
+    animation-delay: 1s;
+}
+
+.floating span:nth-child(3) {
+    bottom: 18%;
+    left: 12%;
+    animation-delay: 2s;
+}
+
+.floating span:nth-child(4) {
+    bottom: 25%;
+    right: 12%;
+    animation-delay: 3s;
+}
+
+
+/* Floating animation */
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(8deg);
+    }
+}
+
+
+/* =========================================
+   FEELINGS SECTION
+========================================= */
+
+.feelings {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #ffffff 0%,
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #eaf8ff,
+            #cceeff
+        );
+}
+
+
+.feelings-content {
+    width: 100%;
+    max-width: 750px;
+
+    animation: appear 1.2s ease;
+}
+
+
+/* =========================================
+   SMALL HEADINGS
+========================================= */
+
+.small-heading {
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #65a9c8;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.feelings h1 {
+    font-family: "Pacifico", cursive;
+
+    font-weight: normal;
+
+    font-size: clamp(
+        45px,
+        8vw,
+        75px
+    );
+
+    line-height: 1.15;
+
+    margin: 20px 0;
+}
+
+
+.feelings h1 span {
+    color: var(--blue);
+}
+
+
+/* =========================================
+   HEART
+========================================= */
+
+.heart {
+    font-size: 45px;
+
+    color: #73b7d6;
+
+    margin: 25px 0;
+
+    animation: heartbeat 2s infinite;
+}
+
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* =========================================
+   FEELINGS MESSAGE BOX
+========================================= */
+
+.message {
+    background: rgba(
+        255,
+        255,
+        255,
+        0.88
+    );
+
+    padding: 45px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 20px 55px
+        rgba(
+            72,
+            139,
+            170,
+            0.15
+        );
+
+    text-align: left;
+
+    position: relative;
+}
+
+
+/* Decorative inner border */
+
+.message::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border: 1px dashed #b8dceb;
+
+    border-radius: 10px;
+
+    pointer-events: none;
+}
+
+
+/* Paragraphs */
+
+.message p {
+    position: relative;
+
+    line-height: 1.9;
+
+    color: var(--soft-text);
+
+    font-size: 16px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Signature */
+
+.signature {
+    text-align: right;
+
+    font-family: "Pacifico", cursive;
+
+    color: #568ba6 !important;
+
+    font-size: 17px !important;
+
+    margin-top: 30px;
+}
+
+
+/* =========================================
+   YOUR PERSONAL MESSAGE
+========================================= */
+
+.special-message {
+    margin-top: 40px;
+
+    font-family: "Pacifico", cursive;
+
+    font-size: 21px;
+
+    line-height: 1.8;
+
+    color: #568ba6;
+
+    text-align: center;
+
+    padding: 0 15px;
+}
+
+
+/* =========================================
+   PHOTO SECTION
+========================================= */
+
+.photos {
+    min-height: 100vh;
+
+    padding: 100px 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background: #f9fdff;
+}
+
+
+.photos-content {
+    width: 100%;
+
+    max-width: 1000px;
+}
+
+
+/* =========================================
+   PHOTO HEADING
+========================================= */
+
+.photos h2 {
+    font-family: "Pacifico", cursive;
+
+    font-weight: normal;
+
+    font-size: clamp(
+        42px,
+        7vw,
+        65px
+    );
+
+    line-height: 1.15;
+
+    margin: 15px 0;
+}
+
+
+.photos h2 span {
+    color: var(--blue);
+}
+
+
+.photo-intro {
+    color: var(--soft-text);
+
+    margin-bottom: 60px;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   PHOTO CONTAINER
+========================================= */
+
+.photo-container {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 50px;
+}
+
+
+/* =========================================
+   PHOTO CARDS
+========================================= */
+
+.photo-card {
+    width: 360px;
+
+    max-width: 90%;
+
+    padding: 12px 12px 22px;
+
+    background: white;
+
+    box-shadow:
+        0 20px 45px
+        rgba(
+            60,
+            130,
+            160,
+            0.18
+        );
+
+    transition: all 0.4s ease;
+}
+
+
+/* Photo itself */
+
+.photo-card img {
+    display: block;
+
+    width: 100%;
+
+    height: 390px;
+
+    object-fit: cover;
+}
+
+
+/* Text below photo */
+
+.photo-card p {
+    font-family: "Pacifico", cursive;
+
+    color: #5c8296;
+
+    margin-top: 17px;
+
+    font-size: 16px;
+}
+
+
+/* First photo tilted left */
+
+.first-photo {
+    transform: rotate(-4deg);
+}
+
+
+/* Second photo tilted right */
+
+.second-photo {
+    transform: rotate(4deg);
+}
+
+
+/* Hover effect */
+
+.photo-card:hover {
+    transform:
+        rotate(0deg)
+        translateY(-10px)
+        scale(1.04);
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   FINAL MESSAGE
+========================================= */
+
+.bottom-message {
+    margin-top: 75px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.bottom-message span {
+    color: #75b8d5;
+
+    font-size: 22px;
+}
+
+
+.bottom-message p {
+    color: #6c8999;
+
+    font-family: "Pacifico", cursive;
+
+    font-size: 17px;
+}
+
+
+/* =========================================
+   PAGE APPEAR ANIMATION
+========================================= */
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   MOBILE PHONE DESIGN
+========================================= */
+
+@media (max-width: 700px) {
+
+    .feelings {
+        min-height: 100svh;
+
+        padding: 60px 18px;
+    }
+
+
+    .feelings h1 {
+        font-size: 48px;
+    }
+
+
+    .message {
+        padding: 40px 25px;
+    }
+
+
+    .message p {
+        font-size: 15px;
+
+        line-height: 1.8;
+    }
+
+
+    .special-message {
+        font-size: 18px;
+
+        line-height: 1.7;
+    }
+
+
+    .photos {
+        padding: 80px 15px;
+    }
+
+
+    .photos h2 {
+        font-size: 45px;
+    }
+
+
+    .photo-container {
+        flex-direction: column;
+
+        gap: 45px;
+    }
+
+
+    .photo-card {
+        width: 90%;
+    }
+
+
+    .photo-card img {
+        height: 360px;
+    }
+
+
+    .bottom-message {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+}
